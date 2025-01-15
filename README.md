@@ -64,14 +64,14 @@ Um projeto simples em Python que utiliza um arquivo CSV como base de dados para 
 
 ## 💡 Atualizações Futuras
 
-- Implementar uma interface gráfica (GUI) para facilitar a interação com o programa. (Atualizações Futuras)
-- Implementar em um sistema operacional Android & IOS, interativo. (Revisão)
-- Adicionar estatísticas detalhadas sobre os carros sorteados (e.g., média de valores, tipos mais sorteados). (Revisão)
-- Incluir uma opção de modo multiplayer, onde os usuários podem competir com base nos carros sorteados. (Revisão)
-- Melhorar o desempenho da filtragem em datasets muito grandes. (Em Andamento)
-- Traduzir o programa completamente para português. (Em Andamento)
-- Criar uma API REST para acessar os dados e realizar sorteios online. (Revisão)
-- Usar um dataset existente para consumir as informações sem precisar de um arquivo df local. (Em Andamento)
+- Implementar uma interface gráfica (GUI) para facilitar a interação com o programa. **`(Atualizações Futuras)`**
+- Implementar em um sistema operacional Android & IOS, interativo. **`(Revisão)`**
+- Adicionar estatísticas detalhadas sobre os carros sorteados (e.g., média de valores, tipos mais sorteados). **`(Revisão)`**
+- Incluir uma opção de modo multiplayer, onde os usuários podem competir com base nos carros sorteados. **`(Revisão)`**
+- Melhorar o desempenho da filtragem em datasets muito grandes.**`(Em Andamento)`**
+- Traduzir o programa completamente para português. **`(Em Andamento)`**
+- Criar uma API REST para acessar os dados e realizar sorteios online. **`(Revisão)`**
+- Usar um dataset existente para consumir as informações sem precisar de um arquivo df local. **`(Em Andamento)`**
 
 ---
 
