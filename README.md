@@ -1,4 +1,4 @@
-# Gerador de Rolezinhos - Forza Horizon 5
+# Gerador de Carros - Forza Horizon 5
 
 Este é um projeto simples em Python que sorteia carros do jogo **Forza Horizon 5** para um grupo de pilotos. Você pode personalizar o sorteio com base em filtros, como **Ano**, **Fabricante**, **Grupo/Tema**, e **Modelo**, ou deixar tudo aleatório.
 
