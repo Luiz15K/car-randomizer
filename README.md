@@ -6,19 +6,19 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
 
 ### 🛠️ Funcionalidades Técnicas
 
-📂 **Manipulação de Dados**: `Utiliza a biblioteca pandas para carregar, filtrar e processar os dados de carros a partir de um arquivo CSV.`
+📂 **Manipulação de Dados**: Utiliza a biblioteca pandas para carregar, filtrar e processar os dados de carros a partir de um arquivo CSV.
 
-🎯 **Filtros Dinâmicos**: `Os usuários podem aplicar filtros como ano, fabricante, tipo, modelo, raridade, país e valor máximo para refinar a seleção de carros.`
+🎯 **Filtros Dinâmicos**: `Os usuários podem aplicar filtros como ano, fabricante, tipo, modelo, raridade, país e valor máximo para refinar a seleção de carros.
 
-🎲 **Randomização**: `Os carros são sorteados de forma aleatória com base nos critérios escolhidos pelo usuário.`
+🎲 **Randomização**: `Os carros são sorteados de forma aleatória com base nos critérios escolhidos pelo usuário.
 
-🧑‍💻 **Interatividade**: `O programa aceita entradas do usuário para configurar filtros e especificar se o sorteio será baseado na quantidade de pilotos ou nos nomes dos pilotos.`
+🧑‍💻 **Interatividade**: `O programa aceita entradas do usuário para configurar filtros e especificar se o sorteio será baseado na quantidade de pilotos ou nos nomes dos pilotos.
 
-🔄 **Gestão de Dados Restantes:**: `Após cada sorteio, os carros já selecionados são removidos do pool para evitar repetições.`
+🔄 **Gestão de Dados Restantes:**: `Após cada sorteio, os carros já selecionados são removidos do pool para evitar repetições.
 
-🛡️ **Fallback Inteligente:** `Se os filtros aplicados não encontrarem nenhum carro disponível, o programa notifica o usuário e oferece a opção de ajustar os filtros.`
+🛡️ **Fallback Inteligente:** `Se os filtros aplicados não encontrarem nenhum carro disponível, o programa notifica o usuário e oferece a opção de ajustar os filtros.
 
-🖥️ **Interface em Terminal:** `A interação é feita diretamente no terminal, permitindo uma experiência simples e funcional.`
+🖥️ **Interface em Terminal:** `A interação é feita diretamente no terminal, permitindo uma experiência simples e funcional.
 
 
 ##  Features
