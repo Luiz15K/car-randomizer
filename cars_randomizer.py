@@ -1,12 +1,14 @@
 import pandas as pd
 import random
 
+# Carregar o arquivo CSV
 df = pd.read_csv('cars_db.csv')
 
-def randomizar_carro(ano=None, fabricante=None, grupo=None, modelo=None):
-    carros_filtrados = df
+def randomizar_carro(carros_disponiveis, ano=None, fabricante=None, grupo=None, modelo=None):
+    carros_filtrados = carros_disponiveis
+
     if ano:
-        carros_filtrados = carros_filtrados[carros_filtrados['Ano'].astype(str).str.contains(ano, case=False, na=False)]
+        carros_filtrados = carros_filtrados[carros_filtrados['Ano'].astype(str) == str(ano)]
     if fabricante:
         carros_filtrados = carros_filtrados[carros_filtrados['Fabricante'].str.contains(fabricante, case=False, na=False)]
     if grupo:
@@ -16,30 +18,34 @@ def randomizar_carro(ano=None, fabricante=None, grupo=None, modelo=None):
 
     if carros_filtrados.empty:
         print("\nNenhum carro encontrado com os filtros aplicados. Randomizando qualquer carro!")
-        carro = df.sample(n=1).iloc[0]
+        carro = carros_disponiveis.sample(n=1).iloc[0]
     else:
         carro = carros_filtrados.sample(n=1).iloc[0]
 
-    return {
-        "Ano": carro['Ano'],
-        "Fabricante": carro['Fabricante'],
-        "Grupo": carro['Grupo'],
-        "Modelo": carro['Modelo'],
-    }
+    return carro
 
 if __name__ == "__main__":
     print("============================================")
     print("        Gerador de Rolezinhos - FH5")
     print("============================================\n")
 
-    print("Escolha filtros para o sorteio. Deixe vazio para incluir todos.\n")
+    # Mostrar opções únicas disponíveis para o filtro "Grupo"
+    grupos_disponiveis = df['Grupo'].dropna().unique()
+    print("Grupos disponíveis para filtro:")
+    for grupo in grupos_disponiveis:
+        print(f"- {grupo}")
 
+    # Entrada de filtros
+    print("\nEscolha filtros para o sorteio. Deixe vazio para incluir todos.\n")
     ano_usuario = input("Digite o ano do carro (ou ENTER para incluir todos): ").strip()
     fabricante_usuario = input("Digite o fabricante do carro (ou ENTER para incluir todos): ").strip()
     grupo_usuario = input("Digite o grupo/tipo do carro (ou ENTER para incluir todos): ").strip()
     modelo_usuario = input("Digite o modelo do carro (ou ENTER para incluir todos): ").strip()
 
+    # Escolha do modo de sorteio
     escolha = input("\nDeseja sortear carros por quantidade de pilotos ou por nomes? (Digite 'quantidade' ou 'nomes'): ").strip().lower()
+
+    carros_disponiveis = df.copy()
 
     if escolha == "quantidade":
         try:
@@ -49,30 +55,44 @@ if __name__ == "__main__":
             num_pilotos = 1
 
         print(f"\nRandomizando carros para {num_pilotos} pilotos...\n")
-        resultados = [randomizar_carro(ano_usuario, fabricante_usuario, grupo_usuario, modelo_usuario) for _ in range(num_pilotos)]
+        resultados = []
+
+        for _ in range(num_pilotos):
+            carro = randomizar_carro(carros_disponiveis, ano_usuario, fabricante_usuario, grupo_usuario, modelo_usuario)
+            resultados.append(carro)
+            carros_disponiveis = carros_disponiveis[carros_disponiveis['Fabricante'] != carro['Fabricante']]
 
         print("============================================")
         print("          Carros escolhidos:")
         print("============================================\n")
-        for i, resultado in enumerate(resultados, 1):
+        for i, carro in enumerate(resultados, 1):
             print(f"Piloto {i}:")
-            for key, value in resultado.items():
-                print(f"  {key}: {value}")
+            print(f"  Ano: {carro['Ano']}")
+            print(f"  Fabricante: {carro['Fabricante']}")
+            print(f"  Grupo: {carro['Grupo']}")
+            print(f"  Modelo: {carro['Modelo']}")
             print("--------------------------------------------")
     elif escolha == "nomes":
         nomes_pilotos = input("\nDigite os nomes dos pilotos (separe por vírgulas): ").split(',')
         nomes_pilotos = [nome.strip() for nome in nomes_pilotos]
 
         print(f"\nRandomizando carros para os pilotos: {', '.join(nomes_pilotos)}...\n")
-        resultados = {nome: randomizar_carro(ano_usuario, fabricante_usuario, grupo_usuario, modelo_usuario) for nome in nomes_pilotos}
+        resultados = {}
+
+        for nome in nomes_pilotos:
+            carro = randomizar_carro(carros_disponiveis, ano_usuario, fabricante_usuario, grupo_usuario, modelo_usuario)
+            resultados[nome] = carro
+            carros_disponiveis = carros_disponiveis[carros_disponiveis['Fabricante'] != carro['Fabricante']]
 
         print("============================================")
         print("          Carros escolhidos:")
         print("============================================\n")
-        for nome, resultado in resultados.items():
+        for nome, carro in resultados.items():
             print(f"Piloto: {nome}")
-            for key, value in resultado.items():
-                print(f"  {key}: {value}")
+            print(f"  Ano: {carro['Ano']}")
+            print(f"  Fabricante: {carro['Fabricante']}")
+            print(f"  Grupo: {carro['Grupo']}")
+            print(f"  Modelo: {carro['Modelo']}")
             print("--------------------------------------------")
     else:
         print("\nOpção inválida! Encerrando o programa.")
