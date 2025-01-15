@@ -11,7 +11,11 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
   - 🏎️ **Fabricante**: Exemplo: `Ferrari`.
   - 🚘 **Grupo/Tipo**: Exemplo: `Supercarros Modernos`.
   - 🔤 **Modelo**: Exemplo: `488 GTB`.
+  - 🌍 **País de Origem**: Exemplo: `Itália`.
+  - 💎 **Raridade**: Exemplo: `Legendary`.
+  - 💰 **Valor Máximo**: Exemplo: `250000`.
   - **Inclua tudo** ao deixar os filtros vazios.
+
 
 - **Sorteio Flexível**:
   - Escolha entre sortear por:
