@@ -40,28 +40,28 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
 
 ## Saída:
 
-============================================
-##          Carros escolhidos:
-============================================
-
-Piloto 1:
-  Ano: 2020
-  Fabricante: Ferrari
-  Grupo: Supercarros Modernos
-  Modelo: Ferrari 488 GTB
---------------------------------------------
-Piloto 2:
-  Ano: 2020
-  Fabricante: Ferrari
-  Grupo: Supercarros Modernos
-  Modelo: Ferrari F8 Tributo
---------------------------------------------
-Piloto 3:
-  Ano: 2020
-  Fabricante: Ferrari
-  Grupo: Supercarros Modernos
-  Modelo: Ferrari SF90 Stradale
---------------------------------------------
+    ============================================
+                Carros escolhidos:
+    ============================================
+    
+    Piloto 1:
+    Ano: 2020
+    Fabricante: Ferrari
+    Grupo: Supercarros Modernos
+    Modelo: Ferrari 488 GTB
+    --------------------------------------------
+    Piloto 2:
+    Ano: 2020
+    Fabricante: Ferrari
+    Grupo: Supercarros Modernos
+    Modelo: Ferrari F8 Tributo
+    --------------------------------------------
+    Piloto 3:
+    Ano: 2020
+    Fabricante: Ferrari
+    Grupo: Supercarros Modernos
+    Modelo: Ferrari SF90 Stradale
+    --------------------------------------------
 
 ## 📜 Licença
 **Este projeto está sob a licença MIT. Sinta-se à vontade para usar, modificar e compartilhar conforme necessário.**
