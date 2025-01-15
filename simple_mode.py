@@ -30,6 +30,12 @@ def run():
         print(f"Piloto {i}:")
         print(f"  Ano: {carro['Ano']}")
         print(f"  Fabricante: {carro['Fabricante']}")
-        print(f"  Grupo: {carro['Grupo']}")
+        print(f"  Tipo: {carro['Tipo']}")
         print(f"  Modelo: {carro['Modelo']}")
+        print(f"  Raridade: {carro['Raridade']}")
+        print(f"  País: {carro['Pais']}")
+        print(f"  Valor: {carro['Valor']}")
         print("--------------------------------------------")
+
+if __name__ == "__main__":
+    run()
