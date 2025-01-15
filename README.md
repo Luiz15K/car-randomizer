@@ -6,19 +6,19 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
 
 ## 🛠️ Funcionalidades Técnicas
 
-📂 **Manipulação de Dados**: Utiliza a biblioteca pandas para carregar, filtrar e processar os dados de carros a partir de um arquivo CSV.
+- 📂 **Manipulação de Dados**: Utiliza a biblioteca pandas para carregar, filtrar e processar os dados de carros a partir de um arquivo CSV.
 
-🎯 **Filtros Dinâmicos**: `Os usuários podem aplicar filtros como ano, fabricante, tipo, modelo, raridade, país e valor máximo para refinar a seleção de carros.
+- 🎯 **Filtros Dinâmicos**: `Os usuários podem aplicar filtros como ano, fabricante, tipo, modelo, raridade, país e valor máximo para refinar a seleção de carros.
 
-🎲 **Randomização**: `Os carros são sorteados de forma aleatória com base nos critérios escolhidos pelo usuário.
+- 🎲 **Randomização**: `Os carros são sorteados de forma aleatória com base nos critérios escolhidos pelo usuário.
 
-🧑‍💻 **Interatividade**: `O programa aceita entradas do usuário para configurar filtros e especificar se o sorteio será baseado na quantidade de pilotos ou nos nomes dos pilotos.
+- 🧑‍💻 **Interatividade**: `O programa aceita entradas do usuário para configurar filtros e especificar se o sorteio será baseado na quantidade de pilotos ou nos nomes dos pilotos.
 
-🔄 **Gestão de Dados Restantes:**: `Após cada sorteio, os carros já selecionados são removidos do pool para evitar repetições.
+- 🔄 **Gestão de Dados Restantes:**: `Após cada sorteio, os carros já selecionados são removidos do pool para evitar repetições.
 
-🛡️ **Fallback Inteligente:** `Se os filtros aplicados não encontrarem nenhum carro disponível, o programa notifica o usuário e oferece a opção de ajustar os filtros.
+- 🛡️ **Fallback Inteligente:** `Se os filtros aplicados não encontrarem nenhum carro disponível, o programa notifica o usuário e oferece a opção de ajustar os filtros.
 
-🖥️ **Interface em Terminal:** `A interação é feita diretamente no terminal, permitindo uma experiência simples e funcional.
+- 🖥️ **Interface em Terminal:** `A interação é feita diretamente no terminal, permitindo uma experiência simples e funcional.
 
 
 ##  Features
@@ -51,16 +51,18 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
 
 ---
 
-### 📜 Licença:
+## 📜 Licenças:
 **Este projeto está sob a licença MIT. Sinta-se à vontade para usar, modificar e compartilhar conforme necessário.**
 
-### 📌 Observação
+## 📌 Observação
 **Este projeto ainda está em processo de adaptação para o português e pode conter informações em inglês.**
 
-### 🏷️ Versão
+## 🏷️ Versão
 **Versão do Projeto: 1.11**
 
-### 💡 Atualizações Futuras
+---
+
+## 💡 Atualizações Futuras
 
 - Implementar uma interface gráfica (GUI) para facilitar a interação com o programa. (Atualizações Futuras)
 - Implementar em um sistema operacional Android & IOS, interativo. (Revisão)
@@ -71,7 +73,9 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
 - Criar uma API REST para acessar os dados e realizar sorteios online. (Revisão)
 - Usar um dataset existente para consumir as informações sem precisar de um arquivo df local. (Em Andamento)
 
-### 🧰 Instalação
+---
+
+## 🧰 Instalação
 Instale as dependências:
 ```bash
 pip install -r requirements.txt
