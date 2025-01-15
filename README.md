@@ -1,6 +1,7 @@
 #  Gerador de Carros - Forza Horizon 5
 
 Um projeto simples em Python que utiliza um arquivo CSV como base de dados para sortear carros do **Forza Horizon 5** de maneira personalizada. 
+
 ---
 
 ## 🛠️ Funcionalidades Técnicas
