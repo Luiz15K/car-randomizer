@@ -11,6 +11,6 @@ if __name__ == "__main__":
     if escolha == 's':
         simple_mode.run()
     elif escolha == 'a':
-        advanced_mode.modo_avancado()  # Atualizado para chamar a função correta
+        advanced_mode.modo_avancado() 
     else:
         print("\nOpção inválida! Encerrando o programa.")

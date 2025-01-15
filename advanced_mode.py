@@ -2,19 +2,13 @@ import pandas as pd
 import random
 import textwrap
 
-# Carregar o arquivo CSV
 df = pd.read_csv('cars_db.csv')
 
 def formatar_lista(lista):
-    """
-    Formata uma lista em colunas para exibição mais visual.
-    """
     return textwrap.fill(", ".join(sorted(lista)), width=80)
 
 def randomizar_carro(carros_disponiveis, ano=None, fabricante=None, tipo=None, modelo=None, raridade=None, pais=None, valor=None):
     carros_filtrados = carros_disponiveis.copy()
-
-    # Aplicar filtros de forma segura
     if ano:
         carros_filtrados = carros_filtrados[carros_filtrados['Ano'].astype(str).str.contains(str(ano), case=False, na=False)]
     if fabricante:
@@ -33,8 +27,6 @@ def randomizar_carro(carros_disponiveis, ano=None, fabricante=None, tipo=None, m
             carros_filtrados = carros_filtrados[carros_filtrados['Valor'].astype(float) <= valor]
         except ValueError:
             print("Valor inválido fornecido. Ignorando filtro de valor.")
-
-    # Retornar carro sorteado ou indicar falta de opções
     if carros_filtrados.empty:
         return None, 0
     return carros_filtrados.sample(n=1).iloc[0], len(carros_filtrados)
@@ -42,11 +34,8 @@ def randomizar_carro(carros_disponiveis, ano=None, fabricante=None, tipo=None, m
 def modo_avancado():
     print("=== Modo Avançado ===")
     print("\nEscolha filtros para o sorteio. Deixe vazio para incluir todos.\n")
-
-    # Listar opções únicas de "Tipo" e "Raridade" disponíveis no DataFrame
     tipos_disponiveis = df['Tipo'].dropna().unique()
     raridades_disponiveis = df['Raridade'].dropna().unique()
-
     print("\nTipos disponíveis:")
     print(formatar_lista(tipos_disponiveis))
     print("\nRaridades disponíveis:")
@@ -61,9 +50,7 @@ def modo_avancado():
         raridade_usuario = input("Digite a raridade do carro (ou ENTER para incluir todos): ").strip()
         pais_usuario = input("Digite o país do carro (ou ENTER para incluir todos): ").strip()
         valor_usuario = input("Digite o valor máximo do carro (ou ENTER para incluir todos): ").strip()
-
         escolha = input("\nDeseja sortear carros por quantidade de pilotos ou por nomes? (Digite 'quantidade' ou 'nomes'): ").strip().lower()
-
         carros_disponiveis = df.copy()
 
         if escolha == "quantidade":
@@ -72,13 +59,10 @@ def modo_avancado():
             except ValueError:
                 print("\nEntrada inválida! O número de pilotos será definido como 1 por padrão.\n")
                 num_pilotos = 1
-
             print(f"\nRandomizando carros para {num_pilotos} pilotos...\n")
             resultados = []
-
             for _ in range(num_pilotos):
                 carro, disponiveis = randomizar_carro(carros_disponiveis, ano_usuario, fabricante_usuario, tipo_usuario, modelo_usuario, raridade_usuario, pais_usuario, valor_usuario)
-                
                 if disponiveis == 0:
                     print("\nNenhum carro encontrado com os filtros aplicados.")
                     continuar = input("Deseja ajustar os filtros? (Digite 'sim' para ajustar ou 'não' para encerrar): ").strip().lower()
@@ -87,10 +71,8 @@ def modo_avancado():
                     else:
                         print("\nEncerrando o programa.")
                         return
-
                 resultados.append(carro)
                 carros_disponiveis = carros_disponiveis.drop(carro.name)
-
             if resultados:
                 print("============================================")
                 print("          Carros escolhidos:")
@@ -109,13 +91,10 @@ def modo_avancado():
         elif escolha == "nomes":
             nomes_pilotos = input("\nDigite os nomes dos pilotos (separe por vírgulas): ").split(',')
             nomes_pilotos = [nome.strip() for nome in nomes_pilotos]
-
             print(f"\nRandomizando carros para os pilotos: {', '.join(nomes_pilotos)}...\n")
             resultados = {}
-
             for nome in nomes_pilotos:
                 carro, disponiveis = randomizar_carro(carros_disponiveis, ano_usuario, fabricante_usuario, tipo_usuario, modelo_usuario, raridade_usuario, pais_usuario, valor_usuario)
-                
                 if disponiveis == 0:
                     print(f"\nNenhum carro encontrado para o piloto {nome} com os filtros aplicados.")
                     continuar = input("Deseja ajustar os filtros? (Digite 'sim' para ajustar ou 'não' para encerrar): ").strip().lower()
@@ -124,10 +103,8 @@ def modo_avancado():
                     else:
                         print("\nEncerrando o programa.")
                         return
-
                 resultados[nome] = carro
                 carros_disponiveis = carros_disponiveis.drop(carro.name)
-
             if resultados:
                 print("============================================")
                 print("          Carros escolhidos:")
