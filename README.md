@@ -1,10 +1,10 @@
-# 🚗 Gerador de Carros - Forza Horizon 5
+#  Gerador de Carros - Forza Horizon 5
 
 Um projeto simples em Python para sortear carros do **Forza Horizon 5** de maneira personalizada para rolês entre amigos! 🎮
 
 ---
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 - **Filtros Personalizados**:
   - 🎯 **Ano**: Exemplo: `2020`.
