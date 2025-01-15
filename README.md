@@ -1,32 +1,74 @@
-# Gerador de Carros - Forza Horizon 5
+# 🚗 Gerador de Carros - Forza Horizon 5
 
-Este é um projeto simples em Python que sorteia carros do jogo **Forza Horizon 5** para um grupo de pilotos. Você pode personalizar o sorteio com base em filtros, como **Ano**, **Fabricante**, **Grupo/Tema**, e **Modelo**, ou deixar tudo aleatório.
+Um projeto simples em Python para sortear carros do **Forza Horizon 5** de maneira personalizada para rolês entre amigos! 🎮
 
-## Funcionalidades
+---
+
+## ✨ Funcionalidades
 
 - **Filtros Personalizados**:
-  - Filtre os carros por:
-    - **Ano**: Exemplo: `2020`.
-    - **Fabricante**: Exemplo: `Ferrari`.
-    - **Grupo** (tipo): Exemplo: `Supercarros Modernos`.
-    - **Modelo**: Exemplo: `458 Italia`.
-  - Caso nenhum filtro seja especificado, todos os carros estarão incluídos.
-  
-- **Sorteio por Pilotos**:
-  - Escolha o número de pilotos para gerar os carros aleatórios.
-  - Associe carros diretamente a nomes de pilotos fornecidos.
+  - 🎯 **Ano**: Exemplo: `2020`.
+  - 🏎️ **Fabricante**: Exemplo: `Ferrari`.
+  - 🚘 **Grupo**: Exemplo: `Supercarros Modernos`.
+  - 🔤 **Modelo**: Exemplo: `458 Italia`.
+  - **Inclua tudo** ao deixar os filtros vazios.
+
+- **Sorteio Flexível**:
+  - Escolha entre sortear por:
+    - **Quantidade de Pilotos**: Informe quantos carros quer sortear.
+    - **Nomes de Pilotos**: Associe um carro a cada nome.
 
 - **Fallback Inteligente**:
-  - Caso nenhum carro atenda aos filtros, o programa sorteia aleatoriamente um carro qualquer.
+  - Se nenhum carro for encontrado, o programa sorteará um carro aleatório.
 
-## Requisitos
+---
+
+## 🛠️ Requisitos
 
 - Python 3.7 ou superior.
 - Dependência: `pandas`.
 
-## Como Usar
 
-### 1. Instale as Dependências
-Certifique-se de que o `pandas` está instalado:
+## 📋 Exemplo de Uso
+## Entrada:
+    Digite o ano do carro (ou ENTER para incluir todos): 2020
+    Digite o fabricante do carro (ou ENTER para incluir todos): Ferrari
+    Digite o grupo/tipo do carro (ou ENTER para incluir todos): Supercarros Modernos
+    Digite o modelo do carro (ou ENTER para incluir todos): 488
+    Deseja sortear carros por quantidade de pilotos ou por nomes? (Digite 'quantidade' ou 'nomes'): quantidade
+    Quantos pilotos estarão no rolê? (Digite um número inteiro): 3
+
+## Saída:
+
+============================================
+##          Carros escolhidos:
+============================================
+
+Piloto 1:
+  Ano: 2020
+  Fabricante: Ferrari
+  Grupo: Supercarros Modernos
+  Modelo: Ferrari 488 GTB
+--------------------------------------------
+Piloto 2:
+  Ano: 2020
+  Fabricante: Ferrari
+  Grupo: Supercarros Modernos
+  Modelo: Ferrari F8 Tributo
+--------------------------------------------
+Piloto 3:
+  Ano: 2020
+  Fabricante: Ferrari
+  Grupo: Supercarros Modernos
+  Modelo: Ferrari SF90 Stradale
+--------------------------------------------
+
+## 📜 Licença
+**Este projeto está sob a licença MIT. Sinta-se à vontade para usar, modificar e compartilhar conforme necessário.**
+
+
+### Instale as dependências:
 ```bash
 pip install pandas
+
+
