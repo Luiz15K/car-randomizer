@@ -10,7 +10,7 @@
 **Este projeto ainda está em processo de adaptação para o português e pode conter informações em inglês.**
 
 ## 🏷️ Versão
-**Versão do Projeto: 1.11**
+**Versão do Projeto: 0.1**
 
 
 
