@@ -43,7 +43,7 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
     ============================================
                 Carros escolhidos:
     ============================================
-    
+
     Piloto 1:
     Ano: 2020
     Fabricante: Ferrari
@@ -69,6 +69,6 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
 
 ### Instale as dependências:
 ```bash
-pip install pandas
+pip install -r requirements.txt
 
 
