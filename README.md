@@ -4,7 +4,7 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
 
 ---
 
-### 🛠️ Funcionalidades Técnicas
+## 🛠️ Funcionalidades Técnicas
 
 📂 **Manipulação de Dados**: Utiliza a biblioteca pandas para carregar, filtrar e processar os dados de carros a partir de um arquivo CSV.
 
