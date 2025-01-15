@@ -1,3 +1,4 @@
 cars_randomizer.py
 __pycache__/
 *.pyc
+/venv/
