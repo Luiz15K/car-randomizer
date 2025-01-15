@@ -1,14 +1,22 @@
 import pandas as pd
 import random
+import textwrap
 
 # Carregar o arquivo CSV
 df = pd.read_csv('cars_db.csv')
 
-def randomizar_carro(carros_disponiveis, ano=None, fabricante=None, tipo=None, modelo=None, raridade=None, pais=None, valor=None):
-    carros_filtrados = carros_disponiveis
+def formatar_lista(lista):
+    """
+    Formata uma lista em colunas para exibição mais visual.
+    """
+    return textwrap.fill(", ".join(sorted(lista)), width=80)
 
+def randomizar_carro(carros_disponiveis, ano=None, fabricante=None, tipo=None, modelo=None, raridade=None, pais=None, valor=None):
+    carros_filtrados = carros_disponiveis.copy()
+
+    # Aplicar filtros de forma segura
     if ano:
-        carros_filtrados = carros_filtrados[carros_filtrados['Ano'].astype(str) == str(ano)]
+        carros_filtrados = carros_filtrados[carros_filtrados['Ano'].astype(str).str.contains(str(ano), case=False, na=False)]
     if fabricante:
         carros_filtrados = carros_filtrados[carros_filtrados['Fabricante'].str.contains(fabricante, case=False, na=False)]
     if tipo:
@@ -26,14 +34,24 @@ def randomizar_carro(carros_disponiveis, ano=None, fabricante=None, tipo=None, m
         except ValueError:
             print("Valor inválido fornecido. Ignorando filtro de valor.")
 
-    # Verificar se há carros disponíveis com os filtros aplicados
+    # Retornar carro sorteado ou indicar falta de opções
     if carros_filtrados.empty:
-        return None, 0  # Nenhum carro disponível
+        return None, 0
     return carros_filtrados.sample(n=1).iloc[0], len(carros_filtrados)
 
 def modo_avancado():
     print("=== Modo Avançado ===")
     print("\nEscolha filtros para o sorteio. Deixe vazio para incluir todos.\n")
+
+    # Listar opções únicas de "Tipo" e "Raridade" disponíveis no DataFrame
+    tipos_disponiveis = df['Tipo'].dropna().unique()
+    raridades_disponiveis = df['Raridade'].dropna().unique()
+
+    print("\nTipos disponíveis:")
+    print(formatar_lista(tipos_disponiveis))
+    print("\nRaridades disponíveis:")
+    print(formatar_lista(raridades_disponiveis))
+    print("\n")
 
     while True:
         ano_usuario = input("Digite o ano do carro (ou ENTER para incluir todos): ").strip()
@@ -71,7 +89,7 @@ def modo_avancado():
                         return
 
                 resultados.append(carro)
-                carros_disponiveis = carros_disponiveis[carros_disponiveis['Fabricante'] != carro['Fabricante']]
+                carros_disponiveis = carros_disponiveis.drop(carro.name)
 
             if resultados:
                 print("============================================")
@@ -108,7 +126,7 @@ def modo_avancado():
                         return
 
                 resultados[nome] = carro
-                carros_disponiveis = carros_disponiveis[carros_disponiveis['Fabricante'] != carro['Fabricante']]
+                carros_disponiveis = carros_disponiveis.drop(carro.name)
 
             if resultados:
                 print("============================================")

@@ -67,6 +67,9 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
 **Este projeto está sob a licença MIT. Sinta-se à vontade para usar, modificar e compartilhar conforme necessário.**
 
 
+## Observação!
+**Este projeto ainda está com as informações em inglês, o projeto está sendo constantemente adaptado para o português!!**
+
 ### Instale as dependências:
 ```bash
 pip install -r requirements.txt
