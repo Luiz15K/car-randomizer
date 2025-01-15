@@ -7,7 +7,7 @@
 **Este projeto está sob a licença MIT. Sinta-se à vontade para usar, modificar e compartilhar conforme necessário.**
 
 ## 📌 Observação
-**Este projeto ainda está em processo de adaptação para o português e pode conter informações em inglês.**
+**Este projeto é uma POC, não possui uma build completa**
 
 ## 🏷️ Versão
 **Versão do Projeto: 0.1**
