@@ -41,7 +41,7 @@ Um projeto simples em Python para sortear carros do **Forza Horizon 5** de manei
 **Este projeto ainda está em processo de adaptação para o português e pode conter informações em inglês.**
 
 ### 🏷️ Versão
-**Versão do Projeto: 1.0.0**
+**Versão do Projeto: 1.11**
 
 
 ### 🧰 Instalação
